@@ -3,7 +3,7 @@ package com.heathercronin.sample.coordinatorapp.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.heathercronin.sample.coordinatorapp.di.annotations.ViewModelKey
-import com.heathercronin.sample.coordinatorapp.viewmodel.MainViewModel
+import com.heathercronin.sample.coordinatorapp.viewmodel.RootFragmentViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -16,6 +16,6 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(MainViewModel::class)
-    abstract fun bindMainViewModel(viewModel: MainViewModel): ViewModel
+    @ViewModelKey(RootFragmentViewModel::class)
+    abstract fun bindMainViewModel(viewModel: RootFragmentViewModel): ViewModel
 }
