@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/rootFragment">
+
+    <fragment
+        android:id="@+id/rootFragment"
+        android:name="com.heathercronin.sample.coordinatorapp.view.RootFragment"
+        android:label="RootFragment"/>
+
+    <fragment
+        android:id="@+id/flowAFragmentOne"
+        android:name="com.heathercronin.sample.coordinatorapp.view.FlowAFragmentOne"
+        android:label="FlowAFragmentOne"/>
+</navigation>
