@@ -39,11 +39,18 @@ class RootFragment: BaseFragment() {
             RootScreen.Index
         ) as RootFragmentViewModel
 
-        binding.flowAButton.setOnClickListener {
-            Toast.makeText(it.context, "Flow A", Toast.LENGTH_SHORT).show()
+        viewModel.buttonList.observe(viewLifecycleOwner) {
+            binding.topButton.text = it[0].title
+            binding.bottomButton.text = it[1].title
         }
-        binding.flowBButton.setOnClickListener {
-            Toast.makeText(it.context, "Flow B", Toast.LENGTH_SHORT).show()
+
+        viewModel.fetchData()
+
+        binding.topButton.setOnClickListener {
+            Toast.makeText(it.context, binding.topButton.text, Toast.LENGTH_SHORT).show()
+        }
+        binding.bottomButton.setOnClickListener {
+            Toast.makeText(it.context, binding.bottomButton.text, Toast.LENGTH_SHORT).show()
         }
     }
 }

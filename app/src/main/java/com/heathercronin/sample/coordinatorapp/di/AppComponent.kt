@@ -15,6 +15,7 @@ import javax.inject.Singleton
     ActivityBindings::class,
     FragmentBindings::class,
     CoordinatorModule::class,
+    RepositoryModule::class,
     AndroidInjectionModule::class
 ])
 interface ApplicationComponent: AndroidInjector<CoordinatorApplication> {
