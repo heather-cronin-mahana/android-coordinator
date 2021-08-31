@@ -15,6 +15,7 @@ retesting at the new integration point, because it is the exact same code-path.
 # Dependencies
 - androidx navigation -> this is to use the navigation components
 - androidx architecture components -> this is mainly to just use the Viewmodels
+- rxJava -> very lightweight here, however it shows how a repository pattern might function in the model layer
 
 # Basic structure for Coordinators
 - `Coordinator` -> this is the class that will know where to navigate next when a flow is launched
