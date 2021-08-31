@@ -1,5 +1,6 @@
 package com.heathercronin.sample.coordinatorapp.coordinator
 
+import android.util.Log
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -7,14 +8,17 @@ import androidx.lifecycle.ViewModelStoreOwner
 import androidx.navigation.NavController
 import com.heathercronin.sample.coordinatorapp.coordinator.contract.Coordinator
 import com.heathercronin.sample.coordinatorapp.coordinator.contract.CoordinatorStartNoParams
+import com.heathercronin.sample.coordinatorapp.coordinator.contract.NoParams
+import com.heathercronin.sample.coordinatorapp.coordinator.delegate.RootScreenViewModelDelegate
 import com.heathercronin.sample.coordinatorapp.coordinator.navigator.RootNavigator
 import com.heathercronin.sample.coordinatorapp.coordinator.screen.RootScreen
 import com.heathercronin.sample.coordinatorapp.viewmodel.RootFragmentViewModel
 import javax.inject.Inject
 
 class RootCoordinator @Inject constructor(
-    val navigator: RootNavigator
-): Coordinator<RootScreen, CoordinatorStartNoParams> {
+    val navigator: RootNavigator,
+    val flowACoordinator: FlowACoordinator
+): Coordinator<RootScreen, CoordinatorStartNoParams>, RootScreenViewModelDelegate {
     override var completionAction: (() -> Unit)? = null
 
     override fun start(params: CoordinatorStartNoParams, completionAction: (() -> Unit)?) {
@@ -32,7 +36,7 @@ class RootCoordinator @Inject constructor(
             is RootScreen.Index -> {
                 ViewModelProvider(viewModelStoreOwner, viewModelFactory)
                     .get(RootFragmentViewModel::class.java).apply {
-                    // assign any delegates here
+                    delegate = this@RootCoordinator
                 }
             }
             else -> null
@@ -41,9 +45,22 @@ class RootCoordinator @Inject constructor(
 
     override fun updateNavControllerOnViewCreated(navController: NavController) {
         navigator.updateNavController(navController)
+        flowACoordinator.updateNavControllerOnViewCreated(navController)
     }
 
     override fun clearNavController(navController: NavController) {
-        navigator.updateNavController(navController)
+        navigator.clearNavController(navController)
+        flowACoordinator.clearNavController(navController)
+    }
+
+    ////// RootScreenViewModelDelegate Implementation /////////
+    override fun topButtonClicked() {
+        flowACoordinator.start(NoParams) {
+            // Add anything here that you'd like executed when this child coordinator completes
+        }
+    }
+
+    override fun bottomButtonClicked() {
+        Log.e("heather", "not yet implemented")
     }
 }

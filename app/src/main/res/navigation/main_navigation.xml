@@ -13,4 +13,9 @@
         android:id="@+id/flowAFragmentOne"
         android:name="com.heathercronin.sample.coordinatorapp.view.FlowAFragmentOne"
         android:label="FlowAFragmentOne"/>
+
+    <fragment
+        android:id="@+id/flowAFragmentTwo"
+        android:name="com.heathercronin.sample.coordinatorapp.view.FlowAFragmentTwo"
+        android:label="FlowAFragmentTwo"/>
 </navigation>

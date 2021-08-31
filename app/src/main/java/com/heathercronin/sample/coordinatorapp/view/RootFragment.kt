@@ -38,6 +38,7 @@ class RootFragment: BaseFragment() {
             viewLifecycleOwner,
             RootScreen.Index
         ) as RootFragmentViewModel
+        binding.viewModel = viewModel
 
         viewModel.buttonList.observe(viewLifecycleOwner) {
             binding.topButton.text = it[0].title
@@ -46,9 +47,9 @@ class RootFragment: BaseFragment() {
 
         viewModel.fetchData()
 
-        binding.topButton.setOnClickListener {
-            Toast.makeText(it.context, binding.topButton.text, Toast.LENGTH_SHORT).show()
-        }
+//        binding.topButton.setOnClickListener {
+//            Toast.makeText(it.context, binding.topButton.text, Toast.LENGTH_SHORT).show()
+//        }
         binding.bottomButton.setOnClickListener {
             Toast.makeText(it.context, binding.bottomButton.text, Toast.LENGTH_SHORT).show()
         }

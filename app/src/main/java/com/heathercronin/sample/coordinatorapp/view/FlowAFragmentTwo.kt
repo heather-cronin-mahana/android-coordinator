@@ -7,27 +7,25 @@ import android.view.ViewGroup
 import com.heathercronin.sample.coordinatorapp.R
 import com.heathercronin.sample.coordinatorapp.coordinator.FlowACoordinator
 import com.heathercronin.sample.coordinatorapp.coordinator.screen.FlowAScreen
-import com.heathercronin.sample.coordinatorapp.coordinator.screen.RootScreen
-import com.heathercronin.sample.coordinatorapp.databinding.FragmentFlowaOneBinding
+import com.heathercronin.sample.coordinatorapp.databinding.FragmentFlowaTwoBinding
 import com.heathercronin.sample.coordinatorapp.extensions.viewBinding
-import com.heathercronin.sample.coordinatorapp.viewmodel.FlowAFragmentOneViewModel
-import com.heathercronin.sample.coordinatorapp.viewmodel.RootFragmentViewModel
+import com.heathercronin.sample.coordinatorapp.viewmodel.FlowAFragmentTwoViewModel
 import javax.inject.Inject
 
-class FlowAFragmentOne: BaseFragment() {
-    private val binding: FragmentFlowaOneBinding by viewBinding(FragmentFlowaOneBinding::bind)
+class FlowAFragmentTwo: BaseFragment() {
+    private val binding: FragmentFlowaTwoBinding by viewBinding(FragmentFlowaTwoBinding::bind)
 
     @Inject
     lateinit var coordinator: FlowACoordinator
 
-    private lateinit var viewModel: FlowAFragmentOneViewModel
+    private lateinit var viewModel: FlowAFragmentTwoViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? =
-        inflater.inflate(R.layout.fragment_flowa_one, container, false)
+        inflater.inflate(R.layout.fragment_flowa_two, container, false)
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,8 +35,7 @@ class FlowAFragmentOne: BaseFragment() {
             this,
             viewModelFactory,
             viewLifecycleOwner,
-            FlowAScreen.ScreenOne
-        ) as FlowAFragmentOneViewModel
-        binding.viewModel = viewModel
+            FlowAScreen.ScreenTwo
+        ) as FlowAFragmentTwoViewModel
     }
 }

@@ -2,7 +2,10 @@ package com.heathercronin.sample.coordinatorapp.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.heathercronin.sample.coordinatorapp.databinding.FragmentFlowaOneBinding
 import com.heathercronin.sample.coordinatorapp.di.annotations.ViewModelKey
+import com.heathercronin.sample.coordinatorapp.viewmodel.FlowAFragmentOneViewModel
+import com.heathercronin.sample.coordinatorapp.viewmodel.FlowAFragmentTwoViewModel
 import com.heathercronin.sample.coordinatorapp.viewmodel.RootFragmentViewModel
 import dagger.Binds
 import dagger.Module
@@ -17,5 +20,15 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(RootFragmentViewModel::class)
-    abstract fun bindMainViewModel(viewModel: RootFragmentViewModel): ViewModel
+    abstract fun bindRootFragmentViewModel(viewModel: RootFragmentViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(FlowAFragmentOneViewModel::class)
+    abstract fun bindFlowAFragmentOneViewModel(viewModel: FlowAFragmentOneViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(FlowAFragmentTwoViewModel::class)
+    abstract fun bindFlowAFragmentTwoViewModel(viewModel: FlowAFragmentTwoViewModel): ViewModel
 }
