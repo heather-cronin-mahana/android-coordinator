@@ -1,4 +1,4 @@
-package com.heathercronin.sample.coordinatorapp.viewmodel
+package com.heathercronin.sample.coordinatorapp.viewmodel.flowa
 
 import androidx.lifecycle.ViewModel
 import com.heathercronin.sample.coordinatorapp.coordinator.delegate.FlowAScreenOneViewModelDelegate

@@ -2,10 +2,9 @@ package com.heathercronin.sample.coordinatorapp.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.heathercronin.sample.coordinatorapp.databinding.FragmentFlowaOneBinding
 import com.heathercronin.sample.coordinatorapp.di.annotations.ViewModelKey
-import com.heathercronin.sample.coordinatorapp.viewmodel.FlowAFragmentOneViewModel
-import com.heathercronin.sample.coordinatorapp.viewmodel.FlowAFragmentTwoViewModel
+import com.heathercronin.sample.coordinatorapp.viewmodel.flowa.FlowAFragmentOneViewModel
+import com.heathercronin.sample.coordinatorapp.viewmodel.flowa.FlowAFragmentTwoViewModel
 import com.heathercronin.sample.coordinatorapp.viewmodel.RootFragmentViewModel
 import dagger.Binds
 import dagger.Module

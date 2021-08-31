@@ -10,8 +10,8 @@ import com.heathercronin.sample.coordinatorapp.coordinator.contract.CoordinatorS
 import com.heathercronin.sample.coordinatorapp.coordinator.delegate.FlowAScreenOneViewModelDelegate
 import com.heathercronin.sample.coordinatorapp.coordinator.navigator.FlowANavigator
 import com.heathercronin.sample.coordinatorapp.coordinator.screen.FlowAScreen
-import com.heathercronin.sample.coordinatorapp.viewmodel.FlowAFragmentOneViewModel
-import com.heathercronin.sample.coordinatorapp.viewmodel.FlowAFragmentTwoViewModel
+import com.heathercronin.sample.coordinatorapp.viewmodel.flowa.FlowAFragmentOneViewModel
+import com.heathercronin.sample.coordinatorapp.viewmodel.flowa.FlowAFragmentTwoViewModel
 import javax.inject.Inject
 
 class FlowACoordinator @Inject constructor(

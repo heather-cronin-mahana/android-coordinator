@@ -1,4 +1,4 @@
-package com.heathercronin.sample.coordinatorapp.viewmodel
+package com.heathercronin.sample.coordinatorapp.viewmodel.flowa
 
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject

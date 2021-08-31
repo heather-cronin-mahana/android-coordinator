@@ -1,4 +1,4 @@
-package com.heathercronin.sample.coordinatorapp.view
+package com.heathercronin.sample.coordinatorapp.view.flowa
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import com.heathercronin.sample.coordinatorapp.R
 import com.heathercronin.sample.coordinatorapp.coordinator.FlowACoordinator
 import com.heathercronin.sample.coordinatorapp.coordinator.screen.FlowAScreen
-import com.heathercronin.sample.coordinatorapp.coordinator.screen.RootScreen
 import com.heathercronin.sample.coordinatorapp.databinding.FragmentFlowaOneBinding
 import com.heathercronin.sample.coordinatorapp.extensions.viewBinding
-import com.heathercronin.sample.coordinatorapp.viewmodel.FlowAFragmentOneViewModel
-import com.heathercronin.sample.coordinatorapp.viewmodel.RootFragmentViewModel
+import com.heathercronin.sample.coordinatorapp.view.BaseFragment
+import com.heathercronin.sample.coordinatorapp.viewmodel.flowa.FlowAFragmentOneViewModel
 import javax.inject.Inject
 
 class FlowAFragmentOne: BaseFragment() {

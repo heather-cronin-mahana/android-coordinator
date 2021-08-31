@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.heathercronin.sample.coordinatorapp.viewmodel.FlowAFragmentOneViewModel" />
+            type="com.heathercronin.sample.coordinatorapp.viewmodel.flowa.FlowAFragmentOneViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
