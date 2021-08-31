@@ -1,8 +1,10 @@
 package com.heathercronin.sample.coordinatorapp.di
 
 import com.heathercronin.sample.coordinatorapp.coordinator.FlowACoordinator
+import com.heathercronin.sample.coordinatorapp.coordinator.FlowBCoordinator
 import com.heathercronin.sample.coordinatorapp.coordinator.RootCoordinator
 import com.heathercronin.sample.coordinatorapp.coordinator.navigator.FlowANavigator
+import com.heathercronin.sample.coordinatorapp.coordinator.navigator.FlowBNavigator
 import com.heathercronin.sample.coordinatorapp.coordinator.navigator.Navigator
 import com.heathercronin.sample.coordinatorapp.coordinator.navigator.RootNavigator
 import dagger.Module
@@ -19,8 +21,9 @@ class CoordinatorModule {
     @Singleton
     fun provideRootCoordinator(
         navigator: RootNavigator,
-        flowACoordinator: FlowACoordinator
-    ): RootCoordinator = RootCoordinator(navigator, flowACoordinator)
+        flowACoordinator: FlowACoordinator,
+        flowBCoordinator: FlowBCoordinator
+    ): RootCoordinator = RootCoordinator(navigator, flowACoordinator, flowBCoordinator)
 
     // FLOW A
     @Provides
@@ -31,4 +34,14 @@ class CoordinatorModule {
     @Singleton
     fun provideFlowACoordinator(navigator: FlowANavigator): FlowACoordinator =
         FlowACoordinator(navigator)
+
+    // FLOW B
+    @Provides
+    @Singleton
+    fun provideFlowBNavigator(): FlowBNavigator = FlowBNavigator()
+
+    @Provides
+    @Singleton
+    fun provideFlowBCoordinator(navigator: FlowBNavigator): FlowBCoordinator =
+        FlowBCoordinator(navigator)
 }

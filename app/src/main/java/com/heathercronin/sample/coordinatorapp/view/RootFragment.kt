@@ -46,12 +46,5 @@ class RootFragment: BaseFragment() {
         }
 
         viewModel.fetchData()
-
-//        binding.topButton.setOnClickListener {
-//            Toast.makeText(it.context, binding.topButton.text, Toast.LENGTH_SHORT).show()
-//        }
-        binding.bottomButton.setOnClickListener {
-            Toast.makeText(it.context, binding.bottomButton.text, Toast.LENGTH_SHORT).show()
-        }
     }
 }

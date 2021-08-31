@@ -3,6 +3,7 @@ package com.heathercronin.sample.coordinatorapp.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.heathercronin.sample.coordinatorapp.di.annotations.ViewModelKey
+import com.heathercronin.sample.coordinatorapp.di.flowb.FlowBViewModelModule
 import com.heathercronin.sample.coordinatorapp.viewmodel.flowa.FlowAFragmentOneViewModel
 import com.heathercronin.sample.coordinatorapp.viewmodel.flowa.FlowAFragmentTwoViewModel
 import com.heathercronin.sample.coordinatorapp.viewmodel.RootFragmentViewModel
@@ -10,7 +11,9 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 
-@Module
+@Module (includes = [
+    FlowBViewModelModule::class
+])
 abstract class ViewModelModule {
 
     @Binds

@@ -17,7 +17,8 @@ import javax.inject.Inject
 
 class RootCoordinator @Inject constructor(
     val navigator: RootNavigator,
-    val flowACoordinator: FlowACoordinator
+    val flowACoordinator: FlowACoordinator,
+    val flowBCoordinator: FlowBCoordinator
 ): Coordinator<RootScreen, CoordinatorStartNoParams>, RootScreenViewModelDelegate {
     override var completionAction: (() -> Unit)? = null
 
@@ -46,11 +47,13 @@ class RootCoordinator @Inject constructor(
     override fun updateNavControllerOnViewCreated(navController: NavController) {
         navigator.updateNavController(navController)
         flowACoordinator.updateNavControllerOnViewCreated(navController)
+        flowBCoordinator.updateNavControllerOnViewCreated(navController)
     }
 
     override fun clearNavController(navController: NavController) {
         navigator.clearNavController(navController)
         flowACoordinator.clearNavController(navController)
+        flowBCoordinator.clearNavController(navController)
     }
 
     ////// RootScreenViewModelDelegate Implementation /////////
@@ -61,6 +64,6 @@ class RootCoordinator @Inject constructor(
     }
 
     override fun bottomButtonClicked() {
-        Log.e("heather", "not yet implemented")
+        flowBCoordinator.start(NoParams)
     }
 }

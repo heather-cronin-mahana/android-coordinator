@@ -2,39 +2,43 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
         <variable
             name="viewModel"
-            type="com.heathercronin.sample.coordinatorapp.viewmodel.RootFragmentViewModel" />
+            type="com.heathercronin.sample.coordinatorapp.viewmodel.flowb.FlowBFragmentOneViewModel" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/top_button"
+        <TextView
+            android:id="@+id/flowa_one_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="158dp"
-            android:layout_marginTop="237dp"
-            android:layout_marginEnd="159dp"
-            android:onClick="@{() -> viewModel.topButtonClick()}"
+            android:layout_marginTop="120dp"
+            android:gravity="center_horizontal"
+            android:text="Flow B\n Fragment 1"
+            android:textColor="#3F51B5"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/bottom_button"
+            android:id="@+id/screen_one_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="155dp"
-            android:layout_marginTop="81dp"
-            android:layout_marginEnd="162dp"
-            android:onClick="@{() -> viewModel.bottomButtonClick()}"
+            android:layout_marginStart="199dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="204dp"
+            android:text="next"
+            android:onClick="@{() -> viewModel.buttonClicked()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/top_button" />
+            app:layout_constraintTop_toBottomOf="@+id/flowa_one_text" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

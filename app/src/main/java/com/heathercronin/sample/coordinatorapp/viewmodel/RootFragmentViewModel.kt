@@ -37,6 +37,10 @@ class RootFragmentViewModel @Inject constructor(
         delegate?.topButtonClicked()
     }
 
+    fun bottomButtonClick() {
+        delegate?.bottomButtonClicked()
+    }
+
     companion object {
         private val TAG = RootFragmentViewModel::class.simpleName
     }
